@@ -9,20 +9,12 @@
       gtag('js', new Date());
 
       gtag('config', 'G-1Q74Q951PF');
-
-      $.ajax({
-        url: "https://ipinfo.io",
-        dataType: "jsonp",
-        success: function(res){
-          $(".ip-address").text(res.ip);
-        }     
-      });
     </script>
   </head>
 
   <body>
     <h1>SecondRepository</h1>
-    <p>Your IP address is <a class="ip-address"></a> !</p>
+    <p>Your IP address is <?php echo $_SERVER['REMOTE_ADDR']; ?> !</p>
     <p>Last modified: 0127
   </body>
 </html>
