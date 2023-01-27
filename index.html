@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-  <html>
-    <head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q74Q951PF"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1Q74Q951PF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'G-1Q74Q951PF');
-      </script>
-    </head>
-    <body>
-      <h1>SecondRepository</h1>
-      <p>Your IP address: </p>
+      gtag('config', 'G-1Q74Q951PF');
+
+      $.ajax({
+        url: "https://ipinfo.io",
+        dataType: "jsonp",
+        success: function(res){
+          $(".ip-address").text(res.ip);
+        }     
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>SecondRepository</h1>
+    <p>Your IP address: <a class="ip-address"></a></p>
+    <p>Last modified: 0127
   </body>
 </html>
